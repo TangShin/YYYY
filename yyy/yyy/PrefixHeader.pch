@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  yyy
+//
+//  Created by TangXing on 15/10/10.
+//  Copyright © 2015年 yiyinyue. All rights reserved.
+//
+#import <Availability.h>
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#endif
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "SystemConfiguration/SystemConfiguration.h"
+#import "MobileCoreServices/MobileCoreServices.h"
+#import "UIBarButtonItem+Extension.h"
+#import "NSArray+DecoderFromHTML.h"
+#import "NSString+Extension.h"
+#import "NSDate+Extension.h"
+#import "UIView+TSFrame.h"
+#import "Constant.h"
+#import "Common.h"
+#import "URL.h"
+
+#ifdef DEBUG // 处于开发阶段
+#define TSLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define TSLog(...)
+#endif
+
+#endif /* PrefixHeader_pch */
